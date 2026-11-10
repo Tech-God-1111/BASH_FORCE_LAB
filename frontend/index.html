@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090d16">
+  <meta name="color-scheme" content="dark">
+  <title>BFL Virtual Phone</title>
+  <link rel="stylesheet" href="/assets/phone.css">
+</head>
+<body>
+<main class="workspace">
+  <header class="topbar">
+    <div><span class="brand-mark">BFL</span><strong>VIRTUAL DEVICE LAB</strong></div>
+    <span class="local-tag">● LOCAL DEVICE</span>
+  </header>
+
+  <section class="stage">
+    <aside class="intro">
+      <p class="eyebrow">BASH FORCE LAB / DEVICE EMULATOR</p>
+      <h1>A phone.<br><span>Inside your lab.</span></h1>
+      <p class="lead">A self-contained smartphone simulation for studying PIN authentication, lockout policies and defensive controls.</p>
+      <div class="specs">
+        <div><small>DEVICE</small><b>BFL-VIRTUAL-01</b></div>
+        <div><small>NETWORK</small><b>LOCALHOST ONLY</b></div>
+        <div><small>CALLING</small><b>NOT INCLUDED</b></div>
+      </div>
+      <p class="notice">Software simulation only. It does not access physical phones or external accounts.</p>
+    </aside>
+
+    <section class="phone-wrap">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="statusbar"><span id="status-time">09:41</span><span aria-hidden="true">● ● ● &nbsp; 100%</span></div>
+
+        <section id="setup-screen" class="screen auth-screen hidden">
+          <div class="wallpaper-glow"></div>
+          <div class="device-label">BFL VIRTUAL DEVICE</div>
+          <div class="auth-content setup">
+            <div class="lock-icon" aria-hidden="true">✦</div>
+            <h2>Set your PIN</h2>
+            <p>Create a four-digit device PIN.</p>
+            <form id="setup-form">
+              <input id="setup-pin" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="••••" type="password" autocomplete="off" spellcheck="false" aria-label="Create a four-digit PIN" required>
+              <input id="setup-confirm" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="Confirm PIN" type="password" autocomplete="off" spellcheck="false" aria-label="Confirm the four-digit PIN" required>
+              <button class="primary">CREATE PIN</button>
+            </form>
+            <p id="setup-message" class="message" aria-live="polite"></p>
+          </div>
+          <div class="bottom-hint">SECURED BY BFL AUTHENTICATION</div>
+        </section>
+
+        <section id="lock-screen" class="screen auth-screen hidden">
+          <div class="wallpaper-glow"></div>
+          <div class="device-label">BFL VIRTUAL DEVICE</div>
+          <div class="clock"><strong id="clock-time">09:41</strong><span id="clock-date"></span></div>
+          <div class="auth-content">
+            <div class="lock-icon" aria-hidden="true">⌑</div>
+            <h2>Welcome back</h2>
+            <p>Enter your four-digit PIN to unlock.</p>
+            <form id="unlock-form">
+              <input id="unlock-pin" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="••••" type="password" autocomplete="off" spellcheck="false" aria-label="Four-digit PIN" required>
+              <button class="primary">UNLOCK DEVICE</button>
+            </form>
+            <p id="unlock-message" class="message" aria-live="polite"></p>
+            <p id="lock-status" class="lock-status"></p>
+          </div>
+          <div class="bottom-hint">EMULATED DEVICE • NO PHONE CONNECTION</div>
+        </section>
+
+        <section id="home-screen" class="screen home-screen hidden">
+          <div class="home-wallpaper"></div>
+          <div class="home-date"><span id="home-clock">09:41</span><small id="home-date"></small></div>
+          <div class="welcome"><small>BFL VIRTUAL PHONE</small><h2>Good day.</h2></div>
+          <div class="app-grid">
+            <button class="app-tile" data-app="settings"><span class="app-icon settings" aria-hidden="true">⚙</span><b>Settings</b></button>
+            <button class="app-tile" data-app="security"><span class="app-icon security" aria-hidden="true">◈</span><b>Security</b></button>
+            <button class="app-tile" data-app="lockout-demo"><span class="app-icon security" aria-hidden="true">⌁</span><b>Lockout Demo</b></button>
+            <button class="app-tile" data-app="gallery"><span class="app-icon gallery" aria-hidden="true">▧</span><b>Gallery</b></button>
+            <button class="app-tile" data-app="calculator"><span class="app-icon calculator" aria-hidden="true">＋</span><b>Calculator</b></button>
+            <button class="app-tile" data-app="files"><span class="app-icon files" aria-hidden="true">▤</span><b>Files</b></button>
+            <button class="app-tile" data-app="about"><span class="app-icon about" aria-hidden="true">ⓘ</span><b>About</b></button>
+          </div>
+          <div class="dock" aria-hidden="true"><span>●</span><span>◉</span><span>▣</span></div>
+          <button id="lock-button" class="lock-button">LOCK DEVICE</button>
+        </section>
+
+        <section id="app-screen" class="screen app-screen hidden">
+          <button id="back-home" class="back-button">← Home</button>
+          <div id="app-content"></div>
+        </section>
+        <div class="phone-nav" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+  </section>
+
+  <footer><span>BASH FORCE LAB</span><span>VIRTUAL PHONE MODULE • v2.1</span></footer>
+  <noscript><p class="noscript">This virtual phone needs JavaScript to run. No data leaves your machine.</p></noscript>
+</main>
+<script src="/assets/phone.js"></script>
+</body>
+</html>

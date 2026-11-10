@@ -1,0 +1,29 @@
+{
+  "lab": {
+    "name": "BASH FORCE LAB",
+    "version": "2.1.0",
+    "max_dictionary_entries": 100,
+    "max_failed_attempts": 5,
+    "lockout_seconds": 15
+  },
+  "demo_account": {
+    "username": "student",
+    "password": "LabPass2026!"
+  },
+  "virtual_phone": {
+    "host": "127.0.0.1",
+    "port": 8765,
+    "max_failures": 5,
+    "lockout_seconds": 30,
+    "pin_length": 4,
+    "lock_on_start": true,
+    "state_file": "data/virtual_phone.json"
+  },
+  "kdf": {
+    "name": "pbkdf2_hmac_sha256",
+    "iterations": 240000
+  },
+  "bash": {
+    "timeout_seconds": 15
+  }
+}
